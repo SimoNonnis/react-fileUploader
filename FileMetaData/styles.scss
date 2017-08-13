@@ -1,0 +1,97 @@
+.parent {
+  border: 1px solid #f6f6f6;
+  border-radius: 3px;
+  padding: .5em;
+}
+
+.fileList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.fileListItem {
+  background-color: #f6f6f6;
+  padding: .2em .5em;
+  border: 1px solid #ededed;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fileListItem + .fileListItem {
+  margin-top: .2em;
+}
+
+.metaData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.fileName {
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: .2em;
+  width: 70%;
+}
+
+.fileSize {
+  color: #666;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.progressBar {
+  padding: .1em .2em;
+  background-color: #fff;
+  border: 1px solid #ededed;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 90%;
+
+  .inner {
+    background-color: #89cc59;
+    background: linear-gradient(to right, #dbf291 0%, #89cc59 100%);
+    height: 3px;
+    transition: width .5s ease-in-out;
+    margin: .05em 0;
+  }
+}
+
+.status {
+  color: #666;
+  padding-left: .5em;
+}
+
+.controlButton {
+  background-color: transparent;
+  display: inline-block;
+  box-shadow: none;
+  cursor: pointer;
+  font-style: normal;
+  outline: 0;
+  text-decoration: none;
+  border: none;
+  user-select: none;
+  -webkit-appearance: none;
+  padding: .2em 0 .2em .7em;
+}
+
+@media screen and (min-width: 36em) {
+  .metaData {
+    width: 48%;
+  }
+
+  .controls {
+    width: 48%;
+  }
+}

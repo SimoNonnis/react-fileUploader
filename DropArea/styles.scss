@@ -1,0 +1,79 @@
+
+.parent {
+  border: 1px dashed #979797;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em .5em;
+  transition: background-color .7s;
+  cursor: pointer;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    .iconContainer > svg {
+      animation-name: pulse;
+      animation-duration: 1s;
+      animation-iteration-count: 2;
+      animation-fill-mode: backwards;
+      animation-timing-function: ease-out;
+    }
+  }
+}
+
+.dropActive .parent {
+  background-color: #f6f6f6;
+}
+
+.child {
+  text-align: center;
+}
+
+.iconContainer {
+  svg {
+    display: inline-block;
+    // Improve performance on mobile/tablet devices
+  	// Perspective reduces blurryness of text in Chrome
+    transform: perspective(1px) translateZ(0);
+    // Improve aliasing on mobile/tablet devices
+    box-shadow: 0 0 1px transparent;
+  }
+}
+
+.paragraph {
+  font-size: 18px;
+  font-weight: 600;
+  color: #143651;
+  margin: .5em 0 0;
+}
+
+.button {
+  margin-top: 1.3em;
+  font-size: 14px;
+  display: inline-block;
+  padding: .8em 1em;
+  color: #009fda;
+  border: 1px solid #009fda;
+  border-radius: 3px;
+  text-decoration: none;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-style: normal;
+  outline: 0;
+  text-decoration: none;
+  user-select: none;
+  -webkit-appearance: none;
+}
+
+// Animation
+@keyframes pulse {
+  30% {
+    transform: scale(.98);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
